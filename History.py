@@ -39,8 +39,7 @@ def Historical_Info(selection):
                   'Values' : [BTCcloses[len(Date)-1], BTCaverage, BTCmax, 100*(BTCcloses[len(Date)-1]-BTCcloses[0])/BTCcloses[0], 100*(BTCcloses[len(Date)-1]-BTCvalue6months)/BTCvalue6months]
                   }
         display(pd.DataFrame(BTCtable))
-
-
+        
 # if ETH is requested
 
     elif selection=='ETH':
@@ -49,7 +48,7 @@ def Historical_Info(selection):
         
         ETHread = pd.read_excel (r'C:\Users\Doğan\Desktop\Doğan\Crypto_World\ETH-USD.xlsx')
         ETHcloses=ETHread['Adj Close']
-
+        Date=ETHread['Date']
 
         # Plot the historical data
 
@@ -71,63 +70,65 @@ def Historical_Info(selection):
                   }
         display(pd.DataFrame(ETHtable))
 
-# if BNB is requested
+# if LTC is requested
 
-    elif selection=='BNB':  
+    elif selection=='LTC':  
         
         # Read the files
         
-        BNBread = pd.read_excel (r'C:\Users\Doğan\Desktop\Doğan\Crypto_World\BNB-USD.xlsx')
-        BNBcloses=BNBread['Adj Close']
+        LTCread = pd.read_excel (r'C:\Users\Doğan\Desktop\Doğan\Crypto_World\LTC-USD.xlsx')
+        LTCcloses=LTCread['Adj Close']
+        Date=LTCread['Date']
 
         # Plot the historical data
 
         fig, ax = plt.subplots(figsize=(19, 5))
         fig.subplots_adjust(bottom=0.15, left=0.2)
-        ax.plot(Date, BNBcloses)
+        ax.plot(Date, LTCcloses)
         ax.set_xlabel('Date [in weeks]',size=15)
-        ax.set_ylabel('BNB Values ($)',size=15)
-        ax.set_title('Weekly BNB-USD Graph for last 3 years', size=15, fontweight='bold')
+        ax.set_ylabel('LTC Values ($)',size=15)
+        ax.set_title('Weekly LTC-USD Graph for last 3 years', size=15, fontweight='bold')
         plt.show()
 
         # Give some hints to the user
         
-        BNBaverage = np.average(BNBcloses)
-        BNBmax = max(BNBcloses)
-        BNBvalue6months=BNBcloses[len(Date)-23]
-        BNBtable={'Statistics' : ['The Last Week Close', 'Average($)', 'ATH($)', 'Increase in last 3 years(%)', 'Increase in last 6 months(%)'],
-                'Values' : [BNBcloses[len(Date)-1], BNBaverage, BNBmax, 100*(BNBcloses[len(Date)-1]-BNBcloses[0])/BNBcloses[0], 100*(BNBcloses[len(Date)-1]-BNBvalue6months)/BNBvalue6months]
+        LTCaverage = np.average(LTCcloses)
+        LTCmax = max(LTCcloses)
+        LTCvalue6months=LTCcloses[len(Date)-23]
+        LTCtable={'Statistics' : ['The Last Week Close', 'Average($)', 'ATH($)', 'Increase in last 3 years(%)', 'Increase in last 6 months(%)'],
+                'Values' : [LTCcloses[len(Date)-1], LTCaverage, LTCmax, 100*(LTCcloses[len(Date)-1]-LTCcloses[0])/LTCcloses[0], 100*(LTCcloses[len(Date)-1]-LTCvalue6months)/LTCvalue6months]
                 }
-        display(pd.DataFrame(BNBtable))
+        display(pd.DataFrame(LTCtable))
 
-# if ADA is requested
+# if BCH is requested
 
-    elif selection=='ADA':
+    elif selection=='BCH':
         
         # Read the files
         
-        ADAread = pd.read_excel (r'C:\Users\Doğan\Desktop\Doğan\Crypto_World\ADA-USD.xlsx')
-        ADAcloses=ADAread['Adj Close']
+        BCHread = pd.read_excel (r'C:\Users\Doğan\Desktop\Doğan\Crypto_World\BCH-USD.xlsx')
+        BCHcloses=BCHread['Adj Close']
+        Date=BCHread['Date']
               
         # Plot the historical data
         
         fig, ax = plt.subplots(figsize=(19, 5))
         fig.subplots_adjust(bottom=0.15, left=0.2)
-        ax.plot(Date, ADAcloses)
+        ax.plot(Date, BCHcloses)
         ax.set_xlabel('Date [in weeks]',size=15)
-        ax.set_ylabel('ADA Values ($)',size=15)
-        ax.set_title('Weekly ADA-USD Graph for last 3 years', size=15, fontweight='bold')
+        ax.set_ylabel('BCH Values ($)',size=15)
+        ax.set_title('Weekly BCH-USD Graph for last 3 years', size=15, fontweight='bold')
         plt.show()
         
         # Give some hints to the user
         
-        ADAaverage = np.average(ADAcloses)
-        ADAmax = max(ADAcloses)
-        ADAvalue6months=ADAcloses[len(Date)-23]
-        ADAtable={'Statistics' : ['The Last Week Close', 'Average($)', 'ATH($)', 'Increase in last 3 years(%)', 'Increase in last 6 months(%)'],
-                'Values' : [ADAcloses[len(Date)-1], ADAaverage, ADAmax, 100*(ADAcloses[len(Date)-1]-ADAcloses[0])/ADAcloses[0], 100*(ADAcloses[len(Date)-1]-ADAvalue6months)/ADAvalue6months]
+        BCHaverage = np.average(BCHcloses)
+        BCHmax = max(BCHcloses)
+        BCHvalue6months=BCHcloses[len(Date)-23]
+        BCHtable={'Statistics' : ['The Last Week Close', 'Average($)', 'ATH($)', 'Increase in last 3 years(%)', 'Increase in last 6 months(%)'],
+                'Values' : [BCHcloses[len(Date)-1], BCHaverage, BCHmax, 100*(BCHcloses[len(Date)-1]-BCHcloses[0])/BCHcloses[0], 100*(BCHcloses[len(Date)-1]-BCHvalue6months)/BCHvalue6months]
                 }
-        display(pd.DataFrame(ADAtable))
+        display(pd.DataFrame(BCHtable))
 
 # if XRP is requested
 
@@ -136,7 +137,8 @@ def Historical_Info(selection):
         # Read the files
         
         XRPread = pd.read_excel (r'C:\Users\Doğan\Desktop\Doğan\Crypto_World\XRP-USD.xlsx')
-        XRPcloses=XRPread['Adj Close']        
+        XRPcloses=XRPread['Adj Close']   
+        Date=XRPread['Date']
         
         # Plot the historical data
         
