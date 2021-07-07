@@ -42,4 +42,4 @@ class Wallet(object):
         else:
             self.TotalValueXRP = 0
             
-        print(f'Total Value of your wallet is ${self.TotalValueBTC + self.TotalValueETH + self.TotalValueLTC + self.TotalValueBCH + self.TotalValueXRP}')
+        print(f'Total Value of your wallet is ${self.TotalValueBTC + self.TotalValueETH + self.TotalValueLTC + self.TotalValueBCH + self.TotalValueXRP - TotalCommission}')
