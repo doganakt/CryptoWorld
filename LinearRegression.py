@@ -152,7 +152,7 @@ def Trend_Analysis(coinselection):
         #Retrieve data 
         
         BCHread = pd.read_excel (r'C:\Users\Doğan\Desktop\Doğan\Crypto_World\BCH-USD.xlsx')
-        BCHcloses=LTCread['Adj Close']
+        BCHcloses=BCHread['Adj Close']
         
         term = input('Which horizon would you like to see the trend on?:\n-3 months\n-6 months\n-1 year\nHorizon:')
         if term == '3 months':
