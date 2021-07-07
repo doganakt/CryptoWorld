@@ -8,6 +8,7 @@ from IPython.display import display
 
 
 
+
 def Historical_Info(selection):
   
 # if BTC is requested
